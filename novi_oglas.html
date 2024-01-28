@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>New car</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <script>
+
+        let authToken = localStorage.getItem('authToken');
+
+        if (!authToken) {
+            window.location.href = "register.html";
+        }
+
+
+    </script>
+
+    <div class="container">
+        <nav class="navbar navbar-light bg-light justify-content-between">
+            <a href="index.html" class="navbar-brand">Car Marketplace</a>
+
+            <div id="navigation">
+                <a href="#" id="odjaviSe" class="btn btn-info">Log Out</a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container">
+        <form id="noviOglasForm">
+            <h3>Add new car</h3>
+            <br>
+
+            <div class="form-group">
+                <label for="brand">Brands</label>
+                <select id="brand" class="form-control">
+                    <option selected disabled>Choose brand</option>
+                    <option value="BMW">BMW</option>
+                    <option value="Mercedes-Benz">Mercedes-Benz</option>
+                    <option value="Porsche">Porsche</option>
+                    <option value="Audi">Audi</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" class="form-control" id="price" placeholder="Price (€)">
+            </div>
+
+            <div class="form-group">
+                <label for="fuel">Fuel</label>
+                <select id="fuel" class="form-control">
+                    <option selected disabled>Choose fuel</option>
+                    <option value="Gas">Gas</option>
+                    <option value="Diesel">Diesel</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="year">Year</label>
+                <input type="number" class="form-control" id="year" placeholder="Year">
+            </div>
+
+            <div class="form-group">
+                <label for="body">body</label>
+                <select id="body" class="form-control">
+                    <option selected disabled>Choose body</option>
+                    <option value="Hatchback">Hatchback</option>
+                    <option value="Estate">Estate</option>
+                    <option value="Coupe">Coupe</option>
+                    <option value="Crossover">Crossover</option>
+                    <option value="SUV">SUV</option>
+                </select>
+            </div>
+
+
+
+            <div class="form-group">
+                <label for="image">Add an image</label>
+                <input type="file" id="file" accept="image/*" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="noviOglasBtn">Add a car</button>
+        </form>
+    </div>
+
+    <div class="loader-overlay">
+        <div class="lds-ripple">
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script src="logic.js"></script>
+
+</body>
+
+</html>
